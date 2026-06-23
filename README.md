@@ -1,6 +1,6 @@
 # Corne XIAO v2 — Keymap Reference
 
-5 layers: **Base**, **Lower**, **Raise**, **Macro**, **Extra2** (reserved).
+6 layers: **Base**, **Lower**, **Raise**, **Macro**, **Extra2** (reserved), **Mouse**.
 Encoders on both halves: volume up/down (turn) · see per-layer notes for button actions.
 
 ---
@@ -15,11 +15,12 @@ Encoders on both halves: volume up/down (turn) · see per-layer notes for button
 ├────────┼─────┼─────┼─────┼─────┼─────┼────────┬───────────┼─────┼─────┼─────┼─────┼─────┼──────┤
 │  CTRL  │  Z  │  X  │  C  │  V  │  B  │  [enc] │  [MUTE]   │  N  │  M  │  ,  │  .  │  /  │ SHFT │
 └────────┴─────┴─────┼─────┼─────┼─────┼────────┴───────────┼─────┼─────┼─────┼─────┴─────┴──────┘
-                     │ GUI │ LWR │SHFT │                     │ SPC │ RSE │ RET │
+                     │ GUI │ LWR │SHFT*│                     │ SPC │ RSE │ RET │
                      └─────┴─────┴─────┘                     └─────┴─────┴─────┘
 ```
 
 - **LWR** = hold to activate Lower · **RSE** = hold to activate Raise
+- **SHFT\*** = tap for Shift · hold to activate Mouse layer
 - Home row keys are dual-function: **tap** = letter, **hold** = modifier (see below)
 
 ---
@@ -108,6 +109,27 @@ Hold **LWR**, then hold **MAC** (right thumb middle).
 ```
 
 - **⌃⇧⌘4** = macOS area screenshot — on the `J` key position
+
+---
+
+## Layer 5 — Mouse
+
+Hold **SHFT\*** (left inner thumb key).
+
+```
+┌──────┬──────┬──────┬──────┬──────┬──────┐                    ┌──────┬──────┬──────┬──────┬──────┬──────┐
+│ ---- │ ---- │ ---- │ ---- │ ---- │ ---- │                    │ ---- │ ---- │  ↑   │ ---- │ ---- │ ---- │
+├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
+│ ---- │ ---- │ ---- │ ---- │ ---- │ ---- │                    │ ---- │  ←   │  ↓   │  →   │ ---- │ ---- │
+├──────┼──────┼──────┼──────┼──────┼──────┼────────┬───────────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│ ---- │ ---- │ ---- │ ---- │ ---- │ ---- │  [enc] │  [enc]    │ ---- │ ---- │ ---- │ ---- │ ---- │ ---- │
+└──────┴──────┴──────┼──────┼──────┼──────┼────────┴───────────┼──────┼──────┼──────┼──────┴──────┴──────┘
+                     │ ---- │ ---- │ (hd) │                    │ LCLK │ RCLK │ MCLK │
+                     └──────┴──────┴──────┘                    └──────┴──────┴──────┘
+```
+
+- Mouse movement: **I** = up · **J** = left · **K** = down · **L** = right
+- **LCLK** = left click · **RCLK** = right click · **MCLK** = middle click
 
 ---
 

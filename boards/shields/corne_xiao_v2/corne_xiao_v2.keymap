@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
 
 / {
     behaviors {
@@ -44,7 +45,7 @@
 &kp TAB   &kp Q &kp W &kp E    &kp R &kp T                      &kp Y     &kp U &kp I     &kp O   &kp P    &kp MINUS
 &kp BSPC  &hm LGUI A &hm LALT S &hm LCTRL D &hm LSHFT F &kp G   &kp H  &hm RSHFT J &hm RCTRL K &hm RALT L &hm RGUI SEMI &kp SQT
 &kp LCTRL &kp Z &kp X &kp C    &kp V &kp B     &none &kp C_MUTE &kp N     &kp M &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                      &kp LGUI &mo 1 &kp LSHFT                  &kp SPACE &mo 2 &kp RET
+                      &kp LGUI &mo 1 &lt 5 LSHFT                 &kp SPACE &mo 2 &kp RET
             >;
         };
 
@@ -102,6 +103,23 @@
         extra2 {
             display-name = "extra2";
             status = "reserved";
+        };
+
+        mouse_layer {
+            display-name = "mouse";
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
+
+// ------------------------------------------------------------------------------------------------
+// |      |     |     |     |     |     |                    |     |     |  ^  |     |     |      |
+// |      |     |     |     |     |     |                    |     |  <- |  v  |  -> |     |      |
+// |      |     |     |     |     |     |        |  |        |     |     |     |     |     |      |
+//                    |     |     |     |                    |     |     |     |
+            bindings = <
+&trans &trans &trans &trans &trans &trans                   &trans &trans          &mmv MOVE_UP   &trans          &trans &trans
+&trans &trans &trans &trans &trans &trans                   &trans &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans &trans
+&trans &trans &trans &trans &trans &trans &none &none       &trans &trans          &trans         &trans          &trans &trans
+                     &trans &trans &trans                   &trans &trans          &trans
+            >;
         };
     };
 };

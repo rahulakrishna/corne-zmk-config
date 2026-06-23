@@ -71,15 +71,15 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
 
 // ------------------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |                    |  6  |  7  |  UP |  9  |  0  | BKSP |
-// | CTRL |BCLR |BPRV |BNXT |     |     |                    |  -  | LFT | DWN | RGT |  \  |  `   |
-// | SHFT |     |     |     |     | boot|        |  | boot  |  =  |  +  |  {  |  }  |  \  | boot |
-//                    | GUI | LWR | SHFT |                  | SPC | RSE | RET |
+// |      |  [  |  7  |  8  |  9  |  ]  |                    |  6  |  7  |  UP |  9  |  0  | BKSP |
+// |      |  :  |  4  |  5  |  6  |  +  |                    |  -  | LFT | DWN | RGT |  \  |  `   |
+// |      |  `  |  1  |  2  |  3  |  \  |        |  | boot  |  =  |  +  |  {  |  }  |  \  | boot |
+//                    |  .  |  0  | SHFT|                   | SPC | RSE | RET |
             bindings = <
-&kp TAB    &kp N1     &kp N2     &kp N3     &kp N4 &kp N5                        &kp N6    &kp N7   &kp UP   &kp N9    &kp N0   &kp BSPC
-&kp LCTRL  &bt BT_CLR &bt BT_PRV &bt BT_NXT &trans &trans                        &kp MINUS &kp LEFT &kp DOWN &kp RIGHT &kp BSLH &kp GRAVE
-&kp LSHFT  &trans     &trans     &trans     &trans &bootloader &none &bootloader  &kp EQUAL &kp PLUS &kp LBRC &kp RBRC  &kp BSLH &bootloader
-                                 &trans     &trans &kp LSHFT                     &kp SPACE &trans   &trans
+&trans     &kp LBKT     &kp N7  &kp N8  &kp N9  &kp RBKT                       &kp N6    &kp N7   &kp UP   &kp N9    &kp N0   &kp BSPC
+&trans     &kp LS(SEMI) &kp N4  &kp N5  &kp N6  &kp PLUS                       &kp MINUS &kp LEFT &kp DOWN &kp RIGHT &kp BSLH &kp GRAVE
+&trans     &kp GRAVE    &kp N1  &kp N2  &kp N3  &kp BSLH  &none &bootloader   &kp EQUAL &kp PLUS &kp LBRC &kp RBRC  &kp BSLH &bootloader
+                                &kp DOT &kp N0  &kp LSHFT                     &kp SPACE &trans   &trans
             >;
         };
 

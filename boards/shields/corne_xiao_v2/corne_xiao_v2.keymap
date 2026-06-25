@@ -89,14 +89,14 @@
 
 // ------------------------------------------------------------------------------------------------
 // |      |     |     |     |     |     |                    |     |     |     |     |     |      |
-// |      |     |     |     |     |     |                    |     | M4  |     |     |     |      |
+// |      |BCLR |BPRV |BNXT |     |     |                    |     | M4  |     |     |     |      |
 // |      |     |     |     |     |     |        |  |        |     |     |     |     |     |      |
 //                    |     |     |     |                    |     |     |     |
             bindings = <
-&trans &trans &trans &trans &trans &trans                 &trans &trans                &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans                 &trans &kp LC(LS(LG(N4)))   &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &none &none     &trans &trans                &trans &trans &trans &trans
-                     &trans &trans &kp LSHFT             &kp SPACE &trans            &trans
+&trans &trans     &trans     &trans     &trans &trans                 &trans &trans                &trans &trans &trans &trans
+&trans &bt BT_CLR &bt BT_PRV &bt BT_NXT &trans &trans                 &trans &kp LC(LS(LG(N4)))   &trans &trans &trans &trans
+&trans &trans     &trans     &trans     &trans &trans &none &none     &trans &trans                &trans &trans &trans &trans
+                             &trans     &trans &kp LSHFT             &kp SPACE &trans            &trans
             >;
         };
 

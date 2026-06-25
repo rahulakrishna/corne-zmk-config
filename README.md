@@ -90,7 +90,7 @@ Hold **RSE**.
 - Outer column symbols mirror Miryoku: `[`/`]`, `:`/`+`, `` ` ``/`\`
 - Arrow keys: vim-style navigation on right hand
 - **[BOOT]** appears at right encoder button and right outer key — either enters bootloader
-- ⚠️ Bluetooth controls (BT_CLR, BT_PRV, BT_NXT) were removed from this layer to make room for the numpad
+- Bluetooth controls moved to Macro layer (A/S/D on home row)
 
 ---
 
@@ -102,7 +102,7 @@ Hold **LWR**, then hold **MAC** (right thumb middle).
 ┌──────┬──────┬──────┬──────┬──────┬──────┐                    ┌──────┬────────┬──────┬──────┬──────┬──────┐
 │ ---- │ ---- │ ---- │ ---- │ ---- │ ---- │                    │ ---- │  ----  │ ---- │ ---- │ ---- │ ---- │
 ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼────────┼──────┼──────┼──────┼──────┤
-│ ---- │ ---- │ ---- │ ---- │ ---- │ ---- │                    │ ---- │ ⌃⇧⌘ 4  │ ---- │ ---- │ ---- │ ---- │
+│ ---- │BTCLR │BTPRV │BTNXT │ ---- │ ---- │                    │ ---- │ ⌃⇧⌘ 4  │ ---- │ ---- │ ---- │ ---- │
 ├──────┼──────┼──────┼──────┼──────┼──────┼────────┬───────────┼──────┼────────┼──────┼──────┼──────┼──────┤
 │ ---- │ ---- │ ---- │ ---- │ ---- │ ---- │  [enc] │   [enc]   │ ---- │  ----  │ ---- │ ---- │ ---- │ ---- │
 └──────┴──────┴──────┼──────┼──────┼──────┼────────┴───────────┼──────┼────────┼──────┼──────┴──────┴──────┘
@@ -110,6 +110,7 @@ Hold **LWR**, then hold **MAC** (right thumb middle).
                      └──────┴──────┴──────┘                    └──────┴────────┴──────┘
 ```
 
+- **BTCLR** = clear paired device · **BTPRV/BTNXT** = cycle Bluetooth profiles — on A/S/D
 - **⌃⇧⌘4** = macOS area screenshot — on the `J` key position
 
 ---

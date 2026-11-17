@@ -1,157 +1,170 @@
-# Corne XIAO v2 — Keymap Reference
+# Corne Xiao V2 Keymap
 
-6 layers: **Base**, **Lower**, **Raise**, **Macro**, **Extra2** (reserved), **Mouse**.
-Encoders on both halves: volume up/down (turn) · see per-layer notes for button actions.
+6-column Corne on Seeeduino Xiao BLE, running ZMK v0.3. Right side has a rotary encoder for volume.
 
----
+**[Miryoku](https://github.com/manna-harbour/miryoku) layout (QWERTY), optimised for the Corne.** The core 36 keys (3×5 + 3 thumbs per half) are canonical Miryoku: 8 layers, each activated by a thumb (or the Z / `/` keys for Button) on the **opposite** hand from the layer's content. The Corne's outer columns hold convenience keys (Tab, BkSp, Ctrl, `-`, `'`, Shift), all of which are also reachable from the core 36.
 
-## Layer 0 — Base
-
-```
-┌────────┬─────┬─────┬─────┬─────┬─────┐                    ┌─────┬─────┬─────┬─────┬─────┬──────┐
-│  TAB   │  Q  │  W  │  E  │  R  │  T  │                    │  Y  │  U  │  I  │  O  │  P  │  -   │
-├────────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼──────┤
-│  BKSP  │ A/⌃ │ S/⌥ │ D/⌘ │ F/⇧ │  G  │                    │  H  │ J/⇧ │ K/⌘ │ L/⌥ │ ;/⌃ │  '   │
-├────────┼─────┼─────┼─────┼─────┼─────┼────────┬───────────┼─────┼─────┼─────┼─────┼─────┼──────┤
-│  CTRL  │  Z  │  X  │  C  │  V* │  B  │  [enc] │  [MUTE]   │  N  │  M  │  ,  │  .  │  /  │ SHFT │
-└────────┴─────┴─────┼─────┼─────┼─────┼────────┴───────────┼─────┼─────┼─────┼─────┴─────┴──────┘
-                     │ GUI │ LWR │SHFT │                     │ SPC │ RSE │ RET │
-                     └─────┴─────┴─────┘                     └─────┴─────┴─────┘
-```
-
-- **LWR** = hold to activate Lower · **RSE** = hold to activate Raise
-- **V\*** = tap for V · hold to activate Mouse layer (left index holds, right hand moves + clicks)
-- Home row keys are dual-function: **tap** = letter, **hold** = modifier (see below)
+Clipboard keys use macOS shortcuts (⌘Z / ⌘X / ⌘C / ⌘V / ⇧⌘Z).
 
 ---
 
-## Home Row Mods
-
-Hold the key for the modifier. Tap normally for the letter.
-Tapping term: **280 ms** — hold longer than this to trigger the modifier.
+## Thumb cluster
 
 ```
-┌─────┬──────────┐     ┌─────┬──────────┐
-│ KEY │ HOLD     │     │ KEY │ HOLD     │
-├─────┼──────────┤     ├─────┼──────────┤
-│  A  │ ⌃  CTRL │     │  J  │ ⇧  SHIFT │
-│  S  │ ⌥  OPT  │     │  K  │ ⌘  GUI   │
-│  D  │ ⌘  GUI  │     │  L  │ ⌥  OPT   │
-│  F  │ ⇧  SHIFT│     │  ;  │ ⌃  CTRL  │
-└─────┴──────────┘     └─────┴──────────┘
-  LEFT HAND               RIGHT HAND
+MEDIA/⎋  NAV/⎵  MOUSE/⇥      SYM/↵  NUM/⌫  FUN/⌦
 ```
 
-**Tips:**
-- Roll keys quickly (under 280 ms) — letters will register, not modifiers
-- If a modifier fires accidentally, increase `tapping-term-ms` in the keymap
-- `require-prior-idle-ms = 150` prevents mod triggers during fast typing bursts
+Tap = the labeled key. Hold = the layer. Tap-then-hold repeats the tap key (e.g. hold Space/Backspace to auto-repeat).
 
 ---
 
-## Layer 1 — Lower
+## Layers
 
-Hold **LWR**.
+### 0 — base
 
 ```
-┌────────┬──────┬──────┬──────┬──────┬──────┐                    ┌──────┬──────┬──────┬──────┬──────┬──────┐
-│  ESC   │  !   │  @   │  #   │  $   │  %   │                    │  ^   │  &   │  *   │  (   │  )   │ BKSP │
-├────────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
-│  BKSP  │  1   │  2   │  3   │  4   │  5   │                    │  6   │  7   │  8   │  9   │  0   │  F12 │
-├────────┼──────┼──────┼──────┼──────┼──────┼────────┬───────────┼──────┼──────┼──────┼──────┼──────┼──────┤
-│  CTRL  │  F1  │  F2  │  F3  │  F4  │  F5  │  [enc] │  [BOOT]   │  \   │  `   │  =   │  {   │  }   │  F11 │
-└────────┴──────┴──────┼──────┼──────┼──────┼────────┴───────────┼──────┼──────┼──────┼──────┴──────┴──────┘
-                       │ ---- │ (hd) │ SHFT │                    │ SPC  │ MAC  │ ---- │
-                       └──────┴──────┴──────┘                    └──────┴──────┴──────┘
+Tab   Q      W      E      R      T              Y      U      I      O      P      - _
+BkSp  GUI/A  ALT/S  CTL/D  SFT/F  G              H      SFT/J  CTL/K  ALT/L  GUI/'  ' "
+Ctrl  BTN/Z  AGR/X  C      V      B   [encoder]  N      M      ,      AGR/.  BTN//  Shift
+             MED/⎋  NAV/⎵  MSE/⇥                 SYM/↵  NUM/⌫  FUN/⌦
 ```
 
-- **MAC** = hold (with LWR still held) to activate Macro layer
-- Right encoder button: **bootloader**
+- `'` is on the home row (Miryoku standard) and repeated in the right outer column; `;` is on NUM.
+- Hold X or `.` for AltGr (right Option on macOS).
+- Hold Z or `/` for the Button layer.
+- Outer columns (left: Tab, BkSp, Ctrl; right: `-`, `'`, Shift) are Corne-only extras.
 
 ---
 
-## Layer 2 — Raise
+### 1 — button (hold Z or /)
 
-Hold **RSE**.
+Clipboard and mouse buttons, mirrored on both hands — usable one-handed alongside the mouse.
 
 ```
-┌────────┬──────┬──────┬──────┬──────┬──────┐                    ┌──────┬──────┬──────┬───────┬──────┬──────┐
-│  ----  │  [   │  7   │  8   │  9   │  ]   │                    │  6   │  7   │  UP  │   9   │  0   │ BKSP │
-├────────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼───────┼──────┼──────┤
-│  ----  │  :   │  4   │  5   │  6   │  +   │                    │  -   │ LEFT │ DOWN │ RIGHT │  \   │  `   │
-├────────┼──────┼──────┼──────┼──────┼──────┼────────┬───────────┼──────┼──────┼──────┼───────┼──────┼──────┤
-│  ----  │  `   │  1   │  2   │  3   │  \   │  [enc] │  [BOOT]   │  =   │  +   │  {   │  }    │  \   │[BOOT]│
-└────────┴──────┴──────┼──────┼──────┼──────┼────────┴───────────┼──────┼──────┼──────┼───────┴──────┴──────┘
-                       │  .   │  0   │ SHFT │                    │ SPC  │ (hd) │ ---- │
-                       └──────┴──────┴──────┘                    └──────┴──────┴──────┘
+      Undo   Cut    Copy   Paste  Redo           Redo   Paste  Copy   Cut    Undo
+      GUI    ALT    CTL    SFT    ---            ---    SFT    CTL    ALT    GUI
+      Undo   Cut    Copy   Paste  Redo           Redo   Paste  Copy   Cut    Undo
+             MClk   LClk   RClk                  RClk   LClk   MClk
 ```
-
-- Numpad layout on left hand: 7/8/9 top · 4/5/6 middle · 1/2/3 bottom · `.` and `0` on left thumb
-- Outer column symbols mirror Miryoku: `[`/`]`, `:`/`+`, `` ` ``/`\`
-- Arrow keys: vim-style navigation on right hand
-- **[BOOT]** appears at right encoder button and right outer key — either enters bootloader
-- Bluetooth controls moved to Macro layer (A/S/D on home row)
 
 ---
 
-## Layer 3 — Macro
-
-Hold **LWR**, then hold **MAC** (right thumb middle).
+### 2 — nav (hold NAV/Space)
 
 ```
-┌──────┬──────┬──────┬──────┬──────┬──────┐                    ┌──────┬────────┬──────┬──────┬──────┬──────┐
-│ ---- │ ---- │ ---- │ ---- │ ---- │ ---- │                    │ ---- │  ----  │ ---- │ ---- │ ---- │ ---- │
-├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼────────┼──────┼──────┼──────┼──────┤
-│ ---- │BTCLR │BTPRV │BTNXT │ ---- │ ---- │                    │ ---- │ ⌃⇧⌘ 4  │ ---- │ ---- │ ---- │ ---- │
-├──────┼──────┼──────┼──────┼──────┼──────┼────────┬───────────┼──────┼────────┼──────┼──────┼──────┼──────┤
-│ ---- │ ---- │ ---- │ ---- │ ---- │ ---- │  [enc] │   [enc]   │ ---- │  ----  │ ---- │ ---- │ ---- │ ---- │
-└──────┴──────┴──────┼──────┼──────┼──────┼────────┴───────────┼──────┼────────┼──────┼──────┴──────┴──────┘
-                     │ ---- │ (hd) │ SHFT │                    │ SPC  │  (hd)  │ ---- │
-                     └──────┴──────┴──────┘                    └──────┴────────┴──────┘
+      Boot²  ---    ---    ---    ---            Redo   Paste  Copy   Cut    Undo
+      GUI    ALT    CTL    SFT    ---            CapsW  ←      ↓      ↑      →
+      ---    AGR    ---    ---    ---            Ins    Home   PgDn   PgUp   End
+             ---    (held) ---                   Ret    BkSp   Del
 ```
 
-- **BTCLR** = clear paired device · **BTPRV/BTNXT** = cycle Bluetooth profiles — on A/S/D
-- **⌃⇧⌘4** = macOS area screenshot — on the `J` key position
+- Vim-style arrows shifted one column right, on J K L ' (← ↓ ↑ →)
+- Home/PgDn/PgUp/End directly below the matching arrows
 
 ---
 
-## Layer 5 — Mouse
-
-Hold **V\*** (left index). Right hand handles all movement and clicks.
+### 3 — mouse (hold MOUSE/Tab)
 
 ```
-┌──────┬──────┬──────┬──────┬──────┬──────┐                    ┌──────┬──────┬──────┬──────┬──────┬──────┐
-│ ---- │ ---- │ ---- │ ---- │ ---- │ ---- │                    │ ---- │ ---- │  ↑   │ ---- │ ---- │ ---- │
-├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
-│ ---- │ ---- │ ---- │ ---- │ ---- │ ---- │                    │ ---- │  ←   │  ↓   │  →   │ ---- │ ---- │
-├──────┼──────┼──────┼──────┼──────┼──────┼────────┬───────────┼──────┼──────┼──────┼──────┼──────┼──────┤
-│ ---- │ ---- │ ---- │ ---- │ ---- │ ---- │  [enc] │  [enc]    │ ---- │ SCU  │ SCD  │ SCL  │ SCR  │ ---- │
-└──────┴──────┴──────┼──────┼──────┼──────┼────────┴───────────┼──────┼──────┼──────┼──────┴──────┴──────┘
-                     │ ---- │ ---- │ (hd) │                    │ LCLK │ RCLK │ MCLK │
-                     └──────┴──────┴──────┘                    └──────┴──────┴──────┘
+      Boot²  ---    ---    ---    ---            Redo   Paste  Copy   Cut    Undo
+      GUI    ALT    CTL    SFT    ---            ---    M←     M↓     M↑     M→
+      ---    AGR    ---    ---    ---            ---    W←     W↓     W↑     W→
+             ---    ---    (held)                RClk   LClk   MClk
 ```
 
-- Mouse movement: **I** = up · **J** = left · **K** = down · **L** = right
-- Scroll: **M** = up · **,** = down · **.** = left · **/** = right
-- **LCLK** = left click · **RCLK** = right click · **MCLK** = middle click
+---
+
+### 4 — media (hold MEDIA/Esc)
+
+```
+      Boot²  ---    ---    ---    ---            BT 0   BT 1   BT 2   BT 3   BT 4
+      GUI    ALT    CTL    SFT    ---            USB/BT Prev   Vol-   Vol+   Next
+      ---    AGR    ---    ---    ---            BTClr  ---    ---    ---    ---
+             (held) ---    ---                   Stop   Play   Mute
+```
+
+---
+
+### 5 — num (hold NUM/BkSp)
+
+```
+      [      7      8      9      ]              ---    ---    ---    ---    Boot²
+      ;      4      5      6      =              ---    SFT    CTL    ALT    GUI
+      `      1      2      3      \              ---    ---    ---    AGR    ---
+             .      0      -                     ---    (held) ---
+```
+
+---
+
+### 6 — sym (hold SYM/Enter)
+
+Shifted versions of the NUM layer.
+
+```
+      {      &      *      (      }              ---    ---    ---    ---    Boot²
+      :      $      %      ^      +              ---    SFT    CTL    ALT    GUI
+      ~      !      @      #      |              ---    ---    ---    AGR    ---
+             (      )      _                     (held) ---    ---
+```
+
+---
+
+### 7 — fun (hold FUN/Del)
+
+```
+      F12    F7     F8     F9     PrtSc          ---    ---    ---    ---    Boot²
+      F11    F4     F5     F6     ScrLk          ---    SFT    CTL    ALT    GUI
+      F10    F1     F2     F3     Pause          ---    ---    ---    AGR    ---
+             Menu   Spc    Tab                   ---    ---    (held)
+```
+
+`Boot²` = double-tap to enter the bootloader (single tap does nothing).
+
+---
+
+## Homerow mods
+
+GACS order (pinky → index): GUI · Alt · Ctrl · Shift on both hands.
+
+| Left | Mod | Right | Mod |
+|------|-----|-------|-----|
+| A | Cmd (GUI) | ' | Cmd (GUI) |
+| S | Opt (Alt) | L | Opt (Alt) |
+| D | Ctrl | K | Ctrl |
+| F | Shift | J | Shift |
+
+Positional `balanced` hold-tap: a left-hand mod only becomes a hold when followed by a right-hand key or any thumb key (and vice versa), so same-hand rolls stay as letters.
+
+- Tap term: 280ms
+- Quick-tap: 175ms (tap-then-hold repeats the letter)
+- Prior idle: 150ms (no mod if you were typing just before)
 
 ---
 
 ## Combos
 
-| Keys | Action |
+| Keys | Output |
 |------|--------|
-| Q + W | Studio Unlock |
+| Tab + Q (positions 0, 1) | ZMK Studio unlock |
 
 ---
 
-## Legend
+## Encoder
 
-| Symbol | Meaning |
-|--------|---------|
-| `----` | Transparent — passes through to layer below |
-| `(hd)` | This key is being held to reach this layer |
-| `KEY/⌘` | Tap = letter, Hold = modifier |
-| `[enc]` | Encoder button action |
-| `[BOOT]` | Enter bootloader (for flashing firmware) |
-| `[MUTE]` | Mute media |
+| Action | Result |
+|--------|--------|
+| Rotate (all layers) | Volume up / down |
+| Press (base) | Mute |
+
+---
+
+## Printable cheat sheet
+
+[`docs/miryoku-cheatsheet.pdf`](docs/miryoku-cheatsheet.pdf) is generated straight from the keymap. After changing the keymap, regenerate it with:
+
+```sh
+pip install reportlab
+python3 scripts/cheatsheet.py
+```
+
+Uses macOS's bundled Arial fonts.

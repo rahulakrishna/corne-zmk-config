@@ -2,7 +2,7 @@
 
 6-column Corne on Seeeduino Xiao BLE, running ZMK v0.3. Right side has a rotary encoder for volume.
 
-**[Miryoku](https://github.com/manna-harbour/miryoku) layout (QWERTY), optimised for the Corne.** The core 36 keys (3×5 + 3 thumbs per half) are canonical Miryoku: 8 layers, each activated by a thumb (or the Z / `/` keys for Button) on the **opposite** hand from the layer's content. The Corne's outer columns hold convenience keys (Tab, BkSp, Ctrl, `-`, `'`, Shift), all of which are also reachable from the core 36.
+**[Miryoku](https://github.com/manna-harbour/miryoku) layout (Colemak), optimised for the Corne.** The core 36 keys (3×5 + 3 thumbs per half) are canonical Miryoku: 8 layers, each activated by a thumb (or the Z / `/` keys for Button) on the **opposite** hand from the layer's content. The Corne's outer columns hold convenience keys (Tab, BkSp, Ctrl, `-`, `'`, Shift), all of which are also reachable from the core 36.
 
 Clipboard keys use macOS shortcuts (⌘Z / ⌘X / ⌘C / ⌘V / ⇧⌘Z).
 
@@ -23,13 +23,14 @@ Tap = the labeled key. Hold = the layer. Tap-then-hold repeats the tap key (e.g.
 ### 0 — base
 
 ```
-Tab   Q      W      E      R      T              Y      U      I      O      P      - _
-BkSp  GUI/A  ALT/S  CTL/D  SFT/F  G              H      SFT/J  CTL/K  ALT/L  GUI/'  ' "
-Ctrl  BTN/Z  AGR/X  C      V      B   [encoder]  N      M      ,      AGR/.  BTN//  Shift
+Tab   Q      W      F      P      G              J      L      U      Y      '      - _
+BkSp  GUI/A  ALT/R  CTL/S  SFT/T  D              H      SFT/N  CTL/E  ALT/I  GUI/O  ' "
+Ctrl  BTN/Z  AGR/X  C      V      B   [encoder]  K      M      ,      AGR/.  BTN//  Shift
              MED/⎋  NAV/⎵  MSE/⇥                 SYM/↵  NUM/⌫  FUN/⌦
 ```
 
-- `'` is on the home row (Miryoku standard) and repeated in the right outer column; `;` is on NUM.
+- Classic Colemak, done in the firmware: **set macOS's input source to ABC / U.S., not Colemak.**
+- `'` replaces Colemak's `;` on the top row (Miryoku standard) and is repeated in the right outer column; `;` is on NUM.
 - Hold X or `.` for AltGr (right Option on macOS).
 - Hold Z or `/` for the Button layer.
 - Outer columns (left: Tab, BkSp, Ctrl; right: `-`, `'`, Shift) are Corne-only extras.
@@ -58,7 +59,7 @@ Clipboard and mouse buttons, mirrored on both hands — usable one-handed alongs
              ---    (held) ---                   Ret    BkSp   Del
 ```
 
-- Vim-style arrows shifted one column right, on J K L ' (← ↓ ↑ →)
+- Arrows on the right home row, N E I O (← ↓ ↑ →)
 - Home/PgDn/PgUp/End directly below the matching arrows
 
 ---
@@ -128,10 +129,10 @@ GACS order (pinky → index): GUI · Alt · Ctrl · Shift on both hands.
 
 | Left | Mod | Right | Mod |
 |------|-----|-------|-----|
-| A | Cmd (GUI) | ' | Cmd (GUI) |
-| S | Opt (Alt) | L | Opt (Alt) |
-| D | Ctrl | K | Ctrl |
-| F | Shift | J | Shift |
+| A | Cmd (GUI) | O | Cmd (GUI) |
+| R | Opt (Alt) | I | Opt (Alt) |
+| S | Ctrl | E | Ctrl |
+| T | Shift | N | Shift |
 
 Positional `balanced` hold-tap: a left-hand mod only becomes a hold when followed by a right-hand key or any thumb key (and vice versa), so same-hand rolls stay as letters.
 

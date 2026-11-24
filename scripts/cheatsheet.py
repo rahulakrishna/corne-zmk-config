@@ -305,7 +305,7 @@ def footer(c, n):
     W, H = PAGE
     c.setFillColor(MUTED)
     c.setFont("R", 8)
-    c.drawString(M, M - 14, "Corne XIAO v2 · Miryoku (QWERTY) · ZMK")
+    c.drawString(M, M - 14, "Corne XIAO v2 · Miryoku (Colemak) · ZMK")
     c.drawRightString(W - M, M - 14, str(n))
 
 
@@ -358,8 +358,8 @@ def page_base(c, order, layers):
     c.drawString(x1 + 16, yy, "Z or /  →  Button (clipboard + clicks)")
 
     para(c, x2, y, [
-        "Left:   A Cmd   S Opt   D Ctrl   F Shift",
-        "Right:  ' Cmd   L Opt   K Ctrl   J Shift",
+        "Left:   A Cmd   R Opt   S Ctrl   T Shift",
+        "Right:  O Cmd   I Opt   E Ctrl   N Shift",
         "X and .  →  AltGr (right Option)",
         "A mod only fires with a key on the",
         "other hand (or a thumb), so rolls",
@@ -370,8 +370,9 @@ def page_base(c, order, layers):
         "  the other hand (Cmd+C = hold A, tap C).",
         "Layers: thumb down first, then keys.",
         "Numbers = right thumb Bksp + left hand.",
-        "Arrows = left thumb Space + right hand.",
+        "Arrows = hold Space, then N E I O.",
         "Outer columns: Tab, Bksp, Ctrl | - _, ' \", Shift.",
+        "Set macOS input to ABC / U.S., not Colemak.",
     ])
 
 

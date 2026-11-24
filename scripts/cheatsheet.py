@@ -358,8 +358,8 @@ def page_base(c, order, layers):
     c.drawString(x1 + 16, yy, "Z or /  →  Button (clipboard + clicks)")
 
     para(c, x2, y, [
-        "Left:   A Cmd   R Opt   S Ctrl   T Shift",
-        "Right:  O Cmd   I Opt   E Ctrl   N Shift",
+        "Left:   A Ctrl   R Opt   S Cmd   T Shift",
+        "Right:  O Ctrl   I Opt   E Cmd   N Shift",
         "X and .  →  AltGr (right Option)",
         "A mod only fires with a key on the",
         "other hand (or a thumb), so rolls",
@@ -367,7 +367,7 @@ def page_base(c, order, layers):
     ])
     para(c, x3, y, [
         "Mods: hold mod, then tap the key on",
-        "  the other hand (Cmd+C = hold A, tap C).",
+        "  the other hand (Cmd+C = hold S, tap C).",
         "Layers: thumb down first, then keys.",
         "Numbers = right thumb Bksp + left hand.",
         "Arrows = hold Space, then N E I O.",

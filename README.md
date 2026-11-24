@@ -24,7 +24,7 @@ Tap = the labeled key. Hold = the layer. Tap-then-hold repeats the tap key (e.g.
 
 ```
 Tab   Q      W      F      P      G              J      L      U      Y      '      - _
-BkSp  GUI/A  ALT/R  CTL/S  SFT/T  D              H      SFT/N  CTL/E  ALT/I  GUI/O  ' "
+BkSp  CTL/A  ALT/R  GUI/S  SFT/T  D              H      SFT/N  GUI/E  ALT/I  CTL/O  ' "
 Ctrl  BTN/Z  AGR/X  C      V      B   [encoder]  K      M      ,      AGR/.  BTN//  Shift
              MED/⎋  NAV/⎵  MSE/⇥                 SYM/↵  NUM/⌫  FUN/⌦
 ```
@@ -43,7 +43,7 @@ Clipboard and mouse buttons, mirrored on both hands — usable one-handed alongs
 
 ```
       Undo   Cut    Copy   Paste  Redo           Redo   Paste  Copy   Cut    Undo
-      GUI    ALT    CTL    SFT    ---            ---    SFT    CTL    ALT    GUI
+      CTL    ALT    GUI    SFT    ---            ---    SFT    GUI    ALT    CTL
       Undo   Cut    Copy   Paste  Redo           Redo   Paste  Copy   Cut    Undo
              MClk   LClk   RClk                  RClk   LClk   MClk
 ```
@@ -54,7 +54,7 @@ Clipboard and mouse buttons, mirrored on both hands — usable one-handed alongs
 
 ```
       Boot²  ---    ---    ---    ---            Redo   Paste  Copy   Cut    Undo
-      GUI    ALT    CTL    SFT    ---            CapsW  ←      ↓      ↑      →
+      CTL    ALT    GUI    SFT    ---            CapsW  ←      ↓      ↑      →
       ---    AGR    ---    ---    ---            Ins    Home   PgDn   PgUp   End
              ---    (held) ---                   Ret    BkSp   Del
 ```
@@ -68,7 +68,7 @@ Clipboard and mouse buttons, mirrored on both hands — usable one-handed alongs
 
 ```
       Boot²  ---    ---    ---    ---            Redo   Paste  Copy   Cut    Undo
-      GUI    ALT    CTL    SFT    ---            ---    M←     M↓     M↑     M→
+      CTL    ALT    GUI    SFT    ---            ---    M←     M↓     M↑     M→
       ---    AGR    ---    ---    ---            ---    W←     W↓     W↑     W→
              ---    ---    (held)                RClk   LClk   MClk
 ```
@@ -79,7 +79,7 @@ Clipboard and mouse buttons, mirrored on both hands — usable one-handed alongs
 
 ```
       Boot²  ---    ---    ---    ---            BT 0   BT 1   BT 2   BT 3   BT 4
-      GUI    ALT    CTL    SFT    ---            USB/BT Prev   Vol-   Vol+   Next
+      CTL    ALT    GUI    SFT    ---            USB/BT Prev   Vol-   Vol+   Next
       ---    AGR    ---    ---    ---            BTClr  ---    ---    ---    ---
              (held) ---    ---                   Stop   Play   Mute
 ```
@@ -90,7 +90,7 @@ Clipboard and mouse buttons, mirrored on both hands — usable one-handed alongs
 
 ```
       [      7      8      9      ]              ---    ---    ---    ---    Boot²
-      ;      4      5      6      =              ---    SFT    CTL    ALT    GUI
+      ;      4      5      6      =              ---    SFT    GUI    ALT    CTL
       `      1      2      3      \              ---    ---    ---    AGR    ---
              .      0      -                     ---    (held) ---
 ```
@@ -103,7 +103,7 @@ Shifted versions of the NUM layer.
 
 ```
       {      &      *      (      }              ---    ---    ---    ---    Boot²
-      :      $      %      ^      +              ---    SFT    CTL    ALT    GUI
+      :      $      %      ^      +              ---    SFT    GUI    ALT    CTL
       ~      !      @      #      |              ---    ---    ---    AGR    ---
              (      )      _                     (held) ---    ---
 ```
@@ -114,7 +114,7 @@ Shifted versions of the NUM layer.
 
 ```
       F12    F7     F8     F9     PrtSc          ---    ---    ---    ---    Boot²
-      F11    F4     F5     F6     ScrLk          ---    SFT    CTL    ALT    GUI
+      F11    F4     F5     F6     ScrLk          ---    SFT    GUI    ALT    CTL
       F10    F1     F2     F3     Pause          ---    ---    ---    AGR    ---
              Menu   Spc    Tab                   ---    ---    (held)
 ```
@@ -125,13 +125,13 @@ Shifted versions of the NUM layer.
 
 ## Homerow mods
 
-GACS order (pinky → index): GUI · Alt · Ctrl · Shift on both hands.
+CAGS order (pinky → index): Ctrl · Opt · Cmd · Shift on both hands.
 
 | Left | Mod | Right | Mod |
 |------|-----|-------|-----|
-| A | Cmd (GUI) | O | Cmd (GUI) |
+| A | Ctrl | O | Ctrl |
 | R | Opt (Alt) | I | Opt (Alt) |
-| S | Ctrl | E | Ctrl |
+| S | Cmd (GUI) | E | Cmd (GUI) |
 | T | Shift | N | Shift |
 
 Positional `balanced` hold-tap: a left-hand mod only becomes a hold when followed by a right-hand key or any thumb key (and vice versa), so same-hand rolls stay as letters.
